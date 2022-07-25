@@ -1,2 +1,55 @@
 # microservices
 specific repo for microservices to exchange with partner
+
+This microservice provides tidal info based on Station ID, which can be found here https://tidesandcurrents.noaa.gov/stations.html?type=Harmonic+Constituents, and date/time. 
+
+The user/client can either: 
+  1) provide a Station ID and a specific date/time or 
+  2) provide a Station ID and -1 for either day, month, year, hour, or minute in which case the current date/time of the server would be used
+
+Station ID, day, month, year, hour, and minute must be integers  
+
+This microservice is using ZeroMQ as a library for communication
+
+## how to REQUEST data
+***Ex 1 - Station ID and a specific date/time***
+
+import zmq
+
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.connect("tcp://localhost:5555")
+
+station_id_var = 8537121
+month = 10                      # from 1 to 12
+day = 1                         # from 1 to 31
+year = 22                       # 2 digit format
+hour = 23                       # from 0 to 23
+minute = 30                     # from 0 to 59
+
+request = str(str(station_id_var) + "," + str(month) + "," + str(day) + "," + str(year) + "," + str(hour) + "," + str(minute))
+socket.send(request.encode())
+
+***Ex 2 - Station ID and current date/time***
+
+import zmq
+
+context = zmq.Context()
+socket = context.socket(zmq.REQ)
+socket.connect("tcp://localhost:5555")
+
+station_id_var = 8537121
+month = 10                      # from 1 to 12
+day = 1                         # from 1 to 31
+year = 22                       # 2 digit format
+hour = -1                       # from 0 to 23
+minute = 30                     # from 0 to 59
+
+request = str(str(station_id_var) + "," + str(month) + "," + str(day) + "," + str(year) + "," + str(hour) + "," + str(minute))
+socket.send(request.encode())
+
+## how to RECEIVE data
+
+message = socket.recv().decode()
+
+## UML coming soon
