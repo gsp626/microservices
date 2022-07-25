@@ -29,13 +29,13 @@ station_id_var = 8537121
 
 month = 10                      #must be from 1 to 12 or -1
 
-day = 1                         must be from 1 to 31 or -1
+day = 1                         #must be from 1 to 31 or -1
 
-year = 22                       must be in a 2 digit format or -1
+year = 22                       #must be in a 2 digit format or -1
 
-hour = 23                       must be from 0 to 23 or -1
+hour = 23                       #must be from 0 to 23 or -1
 
-minute = 30                     must be from 0 to 59 or -1
+minute = 30                     #must be from 0 to 59 or -1
 
 request = str(str(station_id_var) + "," + str(month) + "," + str(day) + "," + str(year) + "," + str(hour) + "," + str(minute))
 
@@ -57,15 +57,15 @@ socket.connect("tcp://localhost:5555")
 
 station_id_var = 8537121
 
-month = 10                      must be from 1 to 12 or -1
+month = 10                      #must be from 1 to 12 or -1
 
-day = -1                         must be from 1 to 31 or -1
+day = -1                         #must be from 1 to 31 or -1
 
-year = 22                       must be in a 2 digit format or -1
+year = 22                       #must be in a 2 digit format or -1
 
-hour = 23                       must be from 0 to 23 or -1
+hour = 23                       #must be from 0 to 23 or -1
 
-minute = 30                     must be from 0 to 59 or -1
+minute = 30                     #must be from 0 to 59 or -1
 
 
 request = str(str(station_id_var) + "," + str(month) + "," + str(day) + "," + str(year) + "," + str(hour) + "," + str(minute))
