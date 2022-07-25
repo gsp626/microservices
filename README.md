@@ -76,4 +76,10 @@ socket.send(request.encode())
 
 message = socket.recv().decode()
 
+message may look like the following 
+
+>start_time_tide,2022-07-25 00:18:00,1.437,receding
+
+the client then can use message.split(",") to break the string into a list and use the values of interest
+
 ## UML coming soon
