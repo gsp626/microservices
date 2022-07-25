@@ -27,7 +27,7 @@ socket.connect("tcp://localhost:5555")
 
 station_id_var = 8537121
 
-month = 10                      must be from 1 to 12 or -1
+month = 10                      #must be from 1 to 12 or -1
 
 day = 1                         must be from 1 to 31 or -1
 
