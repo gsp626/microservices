@@ -82,4 +82,6 @@ message may look like the following
 
 the client then can use message.split(",") to break the string into a list and use the values of interest
 
-## UML coming soon
+## UML Sequence Diagram (simplified)
+![UML 361](https://user-images.githubusercontent.com/108242862/180926010-9093fa7b-e51f-4584-8868-e07b8b5b381d.png)
+
